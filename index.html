@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <main class="todo-list">
+      <header class="header">
+        <button onclick="addModalActive(true)" class="btn add-btn" data-btn="add">
+          <ion-icon class="icon-btn" name="add-outline"></ion-icon>
+        </button>
+        <p class="title">Todo List</p>
+      </header>
+      <main class="todos-container">
+        <section class="todos">
+          <!-- <div class="todo finished" data-id="0">
+            <div class="todo-content">
+              <h3 class="todo-title">Reading Book</h3>
+              <div class="todo-date-box">
+                <ion-icon class="icon-todo" name="document-text-outline"></ion-icon>
+                <span class="todo-date">15/10/2022</span>
+              </div>
+            </div>
+            <div class="todo-action-box">
+              <button class="btn update-btn"   onclick="updateModalActive(true,this)" data-btn="update">
+                <ion-icon class="icon-btn" name="pencil"></ion-icon>
+              </button>
+              <button class="btn task-btn  finished-btn" data-btn="finished">
+                <ion-icon class="icon-btn" name="close-circle"></ion-icon>
+              </button>
+              <button class="btn delete-btn" data-btn="delete">
+                <ion-icon class="icon-btn" name="trash"></ion-icon>
+              </button>
+            </div>
+          </div>
+          <div class="todo"  data-id="1">
+            <div class="todo-content">
+              <h3 class="todo-title">Reading Book</h3>
+              <div class="todo-date-box">
+                <ion-icon class="icon-todo" name="document-text-outline"></ion-icon>
+                <span class="todo-date">15/10/2022</span>
+              </div>
+            </div>
+            <div class="todo-action-box">
+              <button  onclick="updateModalActive(true,this)" class="btn update-btn" data-btn="update">
+                <ion-icon class="icon-btn" name="pencil"></ion-icon>
+              </button>
+              <button class="btn task-btn unfinished-btn" data-btn="unfinished">
+                <ion-icon class="icon-btn" name="checkmark-outline"></ion-icon>
+              </button>
+              <button class="btn delete-btn" data-btn="delete">
+                <ion-icon class="icon-btn" name="trash"></ion-icon>
+              </button>
+            </div>
+          </div> -->
+        </section>
+      </main>
+    </main>
+    <div class="todo-input modal">
+      <div class="todo-input-container">
+        <button onclick="addModalActive(false)" class="todo-input-close">&times;</button>
+        <h2 class="todo-input-title">Create Todo</h2>
+        <div class="form-element">
+          <label for="input-text" class="input-text-label">Todo</label>
+          <input type="text" class="input-text">
+        </div>
+        <div class="form-element">
+          <button class="add-btn-action">Add Todo</button>
+        </div>
+
+      </div>
+      <div class="todo-input-overlay"></div>
+    </div>
+    <div class="todo-update modal">
+      <div class="todo-update-container">
+        <button onclick="updateModalActive(false,this)" class="todo-update-close">&times;</button>
+        <h2 class="todo-update-title">Update Todo</h2>
+        <div class="form-element">
+          <label for="update-text" class="update-text-label">Todo</label>
+          <input type="text" class="update-text">
+          <input type="hidden" class="update-hidden">
+        </div>
+        <div class="form-element">
+          <button class="update-btn-action">Update Todo</button>
+        </div>
+
+      </div>
+      <div class="todo-update-overlay"></div>
+    </div>
+    <div class="todo-delete modal">
+      <div class="todo-delete-container">
+        <button onclick="deleteModalActive(false,this)" class="todo-delete-close">&times;</button>
+        <h2 class="todo-delete-title">Delete Todo</h2>
+        
+        <div class="form-element" style="margin-bottom:25px;">
+          <p class="delete-modal-text">Would you like to delete the Todo</p>
+          <input type="hidden" class="delete-hidden">
+        </div>
+
+        <div class="form-element" style="display:flex;gap:10px;align-items:center">
+          <button class="delete-btn-action delete-action-yes">Yes</button>
+          <button onclick="deleteModalActive(false,this)"  class="delete-btn-action delete-action-no" >No</button>
+        </div>
+
+      </div>
+      <div class="todo-delete-overlay"></div>
+    </div>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="main.js"></script>
+  <script src="functionality.js"></script>
+</body>
+</html>
